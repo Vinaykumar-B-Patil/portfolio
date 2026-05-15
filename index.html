@@ -34,6 +34,7 @@
       <div class="hero-btns">
         <a href="#contact" class="btn btn-primary">Get In Touch</a>
         <a href="#projects" class="btn btn-outline">View Projects</a>
+        <a href="resume.html" class="btn btn-outline">View Resume</a>
       </div>
       <div class="hero-socials">
         <a href="https://linkedin.com/in/vinaykumar-b-patil-a30332217" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -147,14 +148,29 @@
           <div class="skill-tags"><span>Altium Designer</span><span>KiCad</span><span>Board Bring-up</span><span>Logic Analyzer</span><span>CRO</span></div>
         </div>
         <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Embedded Linux</h3>
+          <div class="skill-tags"><span>Yocto Project</span><span>Buildroot</span><span>U-Boot</span><span>Linux BSP</span><span>Device Drivers</span><span>Kernel Modules</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-bug"></i></div>
+          <h3>Debugging & Analysis</h3>
+          <div class="skill-tags"><span>JTAG</span><span>OpenOCD</span><span>GDB</span><span>Logic Analyzer</span><span>Oscilloscope</span><span>Static Analysis</span></div>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon"><i class="fas fa-cogs"></i></div>
+          <h3>Build & Toolchain</h3>
+          <div class="skill-tags"><span>GCC ARM</span><span>CMake</span><span>Makefile</span><span>Cross-compilation</span><span>Linker Scripts</span></div>
+        </div>
+        <div class="skill-card">
           <div class="skill-icon"><i class="fas fa-tools"></i></div>
           <h3>Dev Tools</h3>
-          <div class="skill-tags"><span>STM32CubeIDE</span><span>Git</span><span>Docker</span><span>Jira</span><span>Linux</span></div>
+          <div class="skill-tags"><span>STM32CubeIDE</span><span>Git</span><span>Docker</span><span>Jira</span><span>Linux</span><span>VS Code</span></div>
         </div>
         <div class="skill-card">
           <div class="skill-icon"><i class="fas fa-cloud"></i></div>
           <h3>IoT & Cloud</h3>
-          <div class="skill-tags"><span>AWS IoT</span><span>MQTT</span><span>Wi-Fi Telemetry</span><span>ESP32</span></div>
+          <div class="skill-tags"><span>AWS IoT</span><span>MQTT</span><span>Wi-Fi Telemetry</span><span>TLS/SSL</span><span>OTA Updates</span></div>
         </div>
       </div>
     </div>
@@ -215,40 +231,96 @@
   <section id="projects">
     <div class="container">
       <h2 class="section-title">Key <span class="accent">Projects</span></h2>
+
+      <p class="projects-company-label"><i class="fas fa-fighter-jet"></i> Flying Wedge Defence & Aerospace</p>
       <div class="projects-grid">
+
         <div class="project-card">
           <div class="project-top">
             <i class="fas fa-broadcast-tower project-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com/Vinaykumar-B-Patil" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
           </div>
           <h3>2.4 GHz UAV Control Transceiver</h3>
-          <p>Complete transmitter–receiver system for UAV ground control supporting 10 PWM channels with SBUS/PPM output. Full SPI and I2C driver stack for RF modules built from scratch.</p>
-          <div class="project-tags"><span>STM32</span><span>SPI</span><span>I2C</span><span>SBUS</span><span>PPM</span><span>RF</span></div>
+          <p>Designed a complete transmitter–receiver system for UAV ground control supporting 10 PWM channels with SBUS/PPM output. Built the full SPI and I2C driver stack for RF modules from scratch on STM32.</p>
+          <div class="project-tags"><span>STM32</span><span>SPI</span><span>I2C</span><span>SBUS</span><span>PPM</span><span>RF Modules</span></div>
         </div>
+
         <div class="project-card">
           <div class="project-top">
             <i class="fas fa-bolt project-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com/Vinaykumar-B-Patil" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
           </div>
           <h3>Precision Current & Voltage Monitor</h3>
-          <p>High-accuracy measurement PCB with onboard digital calibration firmware. Validated against traceable voltage and current references for production deployment.</p>
-          <div class="project-tags"><span>STM32</span><span>Altium</span><span>KiCad</span><span>Calibration</span><span>I2C</span></div>
+          <p>Designed a high-accuracy sensing and power-monitoring PCB with digital calibration firmware. Validated output against traceable references for production-grade accuracy.</p>
+          <div class="project-tags"><span>STM32</span><span>Altium</span><span>KiCad</span><span>Calibration</span><span>I2C</span><span>PCB Design</span></div>
         </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-plane project-icon"></i>
+          </div>
+          <h3>Avionics Firmware Stack</h3>
+          <p>Developed FreeRTOS-based preemptive multitasking firmware for avionics and sensor subsystems on UAV platforms. Integrated GPS, IMU, and RF peripherals using MAVLink for C2 communication.</p>
+          <div class="project-tags"><span>STM32 HAL/LL</span><span>FreeRTOS</span><span>MAVLink</span><span>GPS</span><span>IMU</span><span>UART</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-network-wired project-icon"></i>
+          </div>
+          <h3>Multi-Protocol Peripheral Driver Suite</h3>
+          <p>Authored and validated a full suite of UART, SPI, I2C, and CAN peripheral drivers for UAV avionics hardware. Reduced integration defects through structured peer code reviews and HIL test campaigns.</p>
+          <div class="project-tags"><span>UART</span><span>SPI</span><span>I2C</span><span>CAN</span><span>STM32</span><span>HIL Testing</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-vial project-icon"></i>
+          </div>
+          <h3>Automated Firmware Validation Suite</h3>
+          <p>Built automated unit and regression test suites for C/C++ firmware modules, enabling repeatable and consistent validation across firmware releases and hardware board revisions.</p>
+          <div class="project-tags"><span>C</span><span>C++</span><span>Unit Testing</span><span>Regression Testing</span><span>HIL</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-layer-group project-icon"></i>
+          </div>
+          <h3>Embedded Linux BSP with Yocto</h3>
+          <p>Built a custom Linux image for UAV onboard compute using the Yocto Project. Configured board support packages (BSP), wrote custom recipes, and integrated peripheral drivers into the target rootfs.</p>
+          <div class="project-tags"><span>Yocto</span><span>Linux BSP</span><span>Device Drivers</span><span>U-Boot</span><span>Cross-compilation</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-microchip project-icon"></i>
+          </div>
+          <h3>Custom Linux Kernel Module</h3>
+          <p>Developed custom Linux kernel modules for hardware-specific peripheral access on UAV compute platforms. Implemented character device drivers with ioctl interfaces for user-space firmware communication.</p>
+          <div class="project-tags"><span>Linux Kernel</span><span>C</span><span>Kernel Modules</span><span>ioctl</span><span>GCC ARM</span></div>
+        </div>
+
+      </div>
+
+      <p class="projects-company-label" style="margin-top:3rem;"><i class="fas fa-industry"></i> Bosch Global Software Technologies</p>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-top">
+            <i class="fas fa-car project-icon"></i>
+          </div>
+          <h3>Automotive ADAS Embedded Firmware</h3>
+          <p>Developed embedded communication firmware for camera-based automotive ADAS systems. Implemented real-time actuator control logic that improved system response latency and reliability.</p>
+          <div class="project-tags"><span>Embedded C</span><span>ADAS</span><span>Real-Time</span><span>Actuator Control</span></div>
+        </div>
+
         <div class="project-card">
           <div class="project-top">
             <i class="fas fa-cloud-rain project-icon"></i>
-            <div class="project-links">
-              <a href="https://github.com/Vinaykumar-B-Patil" target="_blank"><i class="fab fa-github"></i></a>
-            </div>
           </div>
           <h3>Aeronero Air-to-Water IoT Platform</h3>
-          <p>Multi-sensor data acquisition, real-time calibration, and encrypted Wi-Fi telemetry on ESP32 for a cloud-connected atmospheric water generation platform.</p>
+          <p>Integrated multi-sensor data acquisition, real-time calibration, and encrypted Wi-Fi telemetry on ESP32 for a cloud-connected atmospheric water generation platform with AWS IoT backend.</p>
           <div class="project-tags"><span>ESP32</span><span>FreeRTOS</span><span>MQTT</span><span>AWS IoT</span><span>Wi-Fi</span></div>
         </div>
+
       </div>
     </div>
   </section>

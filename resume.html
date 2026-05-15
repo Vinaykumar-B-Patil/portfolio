@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Resume — Vinaykumar B Patil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #0a0a0f;
+      --card: #12121e;
+      --border: #1e1e2e;
+      --accent: #00d4ff;
+      --accent2: #7c3aed;
+      --text: #e2e8f0;
+      --muted: #64748b;
+      --font: 'Inter', sans-serif;
+      --mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .resume-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* HEADER */
+    .resume-header {
+      background: linear-gradient(135deg, #0f0f1a, #14141f);
+      padding: 2.5rem 3rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .resume-header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+    }
+
+    .resume-header h1 span { color: var(--accent); }
+
+    .resume-header h2 {
+      font-size: 0.95rem;
+      font-weight: 400;
+      color: var(--muted);
+      margin-top: 0.3rem;
+      letter-spacing: 0.5px;
+    }
+
+    .resume-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin-top: 1.2rem;
+    }
+
+    .resume-contacts a {
+      font-size: 0.82rem;
+      color: var(--accent);
+      text-decoration: none;
+      font-family: var(--mono);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .resume-contacts a:hover { text-decoration: underline; }
+
+    /* BODY */
+    .resume-body { padding: 2.5rem 3rem; }
+
+    .r-section { margin-bottom: 2.2rem; }
+
+    .r-section-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: var(--mono);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 0.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .r-summary {
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    /* Skills grid */
+    .r-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.6rem 2rem;
+    }
+
+    .r-skill-row { font-size: 0.85rem; color: var(--muted); }
+    .r-skill-row strong { color: var(--text); margin-right: 0.4rem; }
+
+    /* Experience */
+    .r-job { margin-bottom: 1.6rem; }
+
+    .r-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .r-job-title { font-size: 1rem; font-weight: 600; }
+    .r-job-company { font-size: 0.85rem; color: var(--accent); margin-top: 0.1rem; }
+    .r-job-date {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .r-job ul { padding-left: 1.2rem; list-style: disc; }
+    .r-job ul li {
+      font-size: 0.87rem;
+      color: var(--muted);
+      margin-bottom: 0.35rem;
+      line-height: 1.7;
+    }
+    .r-job ul li strong { color: var(--text); }
+
+    .r-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.7rem; }
+    .r-tags span {
+      padding: 0.15rem 0.6rem;
+      background: rgba(0,212,255,0.07);
+      border: 1px solid rgba(0,212,255,0.18);
+      border-radius: 4px;
+      font-size: 0.72rem;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+
+    /* Education */
+    .r-edu {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.3rem;
+    }
+    .r-edu-title { font-size: 0.95rem; font-weight: 600; }
+    .r-edu-sub { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
+    .r-edu-date { font-family: var(--mono); font-size: 0.78rem; color: var(--muted); }
+
+    /* Back link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+      transition: color 0.2s;
+    }
+    .back-link:hover { color: var(--accent); }
+
+    @media print {
+      body { background: #fff; color: #000; padding: 0; }
+      .resume-wrap { border: none; border-radius: 0; }
+      .resume-header { background: #f8f9fa; }
+      .back-link { display: none; }
+      :root { --accent: #0066cc; --muted: #555; --text: #111; --card: #fff; --border: #ddd; }
+    }
+
+    @media (max-width: 600px) {
+      .resume-header, .resume-body { padding: 1.5rem; }
+      .r-skills-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+  <div class="resume-wrap">
+
+    <div class="resume-header">
+      <h1>Vinaykumar <span>B Patil</span></h1>
+      <h2>Embedded Systems Engineer · Firmware · Real-Time Systems · Avionics · Embedded Linux</h2>
+      <div class="resume-contacts">
+        <a href="mailto:vinaykumarbpatil11@gmail.com">✉ vinaykumarbpatil11@gmail.com</a>
+        <a href="tel:+918088167169">📞 +91 80881 67169</a>
+        <a href="https://linkedin.com/in/vinaykumar-b-patil-a30332217" target="_blank">🔗 LinkedIn</a>
+        <a href="https://github.com/Vinaykumar-B-Patil" target="_blank">⌥ GitHub</a>
+      </div>
+    </div>
+
+    <div class="resume-body">
+
+      <div class="r-section">
+        <div class="r-section-title">Summary</div>
+        <p class="r-summary">Embedded Systems Engineer with 2+ years of experience developing production firmware for aerospace, UAV, and power-electronics applications. Proficient in C/C++, STM32 HAL/LL, FreeRTOS-based preemptive multitasking, and Yocto-based embedded Linux. Experienced in multi-protocol driver development (UART, SPI, I2C, CAN), automated unit and regression testing, PCB design, board bring-up, and hardware-software integration.</p>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Technical Skills</div>
+        <div class="r-skills-grid">
+          <div class="r-skill-row"><strong>Languages:</strong> C, Embedded C, C++, C# (exposure)</div>
+          <div class="r-skill-row"><strong>RTOS:</strong> FreeRTOS, QNX RTOS</div>
+          <div class="r-skill-row"><strong>Microcontrollers:</strong> STM32 (HAL/LL), ESP32, Arduino</div>
+          <div class="r-skill-row"><strong>Protocols:</strong> UART, SPI, I2C, CAN, SBUS, PPM, MAVLink</div>
+          <div class="r-skill-row"><strong>Embedded Linux:</strong> Yocto, Buildroot, U-Boot, BSP, Device Drivers</div>
+          <div class="r-skill-row"><strong>Debugging:</strong> JTAG, OpenOCD, GDB, Logic Analyzer, CRO</div>
+          <div class="r-skill-row"><strong>Build & Toolchain:</strong> GCC ARM, CMake, Makefile, Cross-compilation</div>
+          <div class="r-skill-row"><strong>Testing:</strong> Unit Testing, Regression Testing, HIL Validation</div>
+          <div class="r-skill-row"><strong>Hardware:</strong> Altium Designer, KiCad, PCB Design, Board Bring-up</div>
+          <div class="r-skill-row"><strong>IoT & Cloud:</strong> AWS IoT, MQTT, TLS/SSL, OTA Updates</div>
+          <div class="r-skill-row"><strong>Tools:</strong> STM32CubeIDE, Git, Docker, Jira, Linux</div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Experience</div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <div>
+              <div class="r-job-title">Embedded Systems Engineer</div>
+              <div class="r-job-company">Flying Wedge Defence & Aerospace · Bengaluru</div>
+            </div>
+            <div class="r-job-date">Feb 2024 – Present</div>
+          </div>
+          <ul>
+            <li>Designed and implemented <strong>STM32 (HAL/LL) firmware</strong> for avionics and sensor subsystems on UAV platforms using <strong>FreeRTOS</strong> preemptive multitasking.</li>
+            <li>Developed and validated <strong>UART, SPI, I2C, and CAN</strong> communication drivers; reduced integration defects through peer code reviews and HIL testing.</li>
+            <li>Built <strong>automated unit and regression test suites</strong> for C/C++ firmware modules enabling repeatable validation across releases.</li>
+            <li>Implemented <strong>digital calibration algorithms</strong> for precision current and voltage monitoring, improving production measurement accuracy.</li>
+            <li>Designed <strong>sensing and power-monitoring PCBs</strong> (Altium/KiCad); performed full board bring-up and hardware debugging for production prototypes.</li>
+            <li>Built custom <strong>Linux BSP images using Yocto</strong>; developed kernel modules and character device drivers for UAV onboard compute.</li>
+            <li>Assessed open-source <strong>MAVLink libraries</strong> for C2 suitability; integrated GPS, IMU, and RF peripherals into the embedded software stack.</li>
+            <li><strong>2.4 GHz Wireless Transceiver</strong> — Designed transmitter–receiver supporting 10 PWM channels with SBUS/PPM output; SPI and I2C drivers for RF modules.</li>
+            <li><strong>Precision Current & Voltage Monitor</strong> — High-accuracy measurement PCB with digital calibration firmware validated against traceable references.</li>
+          </ul>
+          <div class="r-tags">
+            <span>STM32</span><span>FreeRTOS</span><span>CAN</span><span>MAVLink</span><span>Yocto</span><span>Linux BSP</span><span>Altium</span><span>KiCad</span><span>HIL</span>
+          </div>
+        </div>
+
+        <div class="r-job">
+          <div class="r-job-header">
+            <div>
+              <div class="r-job-title">Software Development Engineer Intern</div>
+              <div class="r-job-company">Bosch Global Software Technologies · Bengaluru</div>
+            </div>
+            <div class="r-job-date">Jan 2023 – May 2023</div>
+          </div>
+          <ul>
+            <li>Developed embedded communication firmware for <strong>camera-based automotive ADAS</strong> systems; implemented real-time actuator control logic improving response latency.</li>
+            <li>Participated in defect tracking and resolution using SCM tools; performed peer code reviews following automotive firmware coding standards.</li>
+            <li><strong>Aeronero Air-to-Water (IoT Platform)</strong> — Integrated multi-sensor acquisition, real-time calibration, and Wi-Fi telemetry on ESP32 with AWS IoT backend.</li>
+          </ul>
+          <div class="r-tags">
+            <span>Embedded C</span><span>ADAS</span><span>ESP32</span><span>AWS IoT</span><span>MQTT</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="r-section">
+        <div class="r-section-title">Education</div>
+        <div class="r-edu">
+          <div>
+            <div class="r-edu-title">B.E. Electronics and Communication Engineering</div>
+            <div class="r-edu-sub">KLE Technological University, Hubballi</div>
+          </div>
+          <div class="r-edu-date">2019 – 2023</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
